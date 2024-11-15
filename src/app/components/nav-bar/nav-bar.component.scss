@@ -1,0 +1,44 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    cursor: pointer;
+    width: 150px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+
+    a{
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a:visited {
+        color: #000000;
+    }
+}
+
+.tab-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    font-weight: bold;
+}
+
+.red-button {
+    background-color: #9C0607;
+    padding: 10px;
+    border-radius: 60px;
+    color: #FFFFFF;
+}
+
+.red-button:hover {
+    font-weight: bold;
+}
