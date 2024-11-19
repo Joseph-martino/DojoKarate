@@ -1,1 +1,11 @@
-<p>news works!</p>
+<p>ACTUALITES</p>
+
+<div *ngIf="newsList">
+    <div *ngFor="let news of newsList">
+        <a (click)="onGoToSingleNewsPage(news.newsId)">{{ news.title | uppercase}}</a>
+        <h3>date: {{ news.createdDate }}</h3>
+        <p>{{ news.content }}</p>
+    </div>
+</div>
+
+<button (click)="onGoToAddNewsPage()">Ajouter</button>

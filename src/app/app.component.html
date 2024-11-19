@@ -1,2 +1,6 @@
-<app-nav-bar></app-nav-bar>
+<app-header *ngIf="currentHeaderInformations"
+[title]="currentHeaderInformations.title"
+[description]="currentHeaderInformations.description"
+[banner]="currentHeaderInformations.banner"
+></app-header>
 <router-outlet></router-outlet>

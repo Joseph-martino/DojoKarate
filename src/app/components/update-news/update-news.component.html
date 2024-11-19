@@ -1,0 +1,28 @@
+<div *ngIf="news">
+    <h2>{{ news.title | uppercase }}</h2>
+    <p> {{ news.content }}</p>
+</div>
+
+<form [formGroup]="updateForm">
+    <div class="form-row">
+        <div class="form-group">
+            <label for="title">Titre*</label>
+            <input id="title" type="text" formControlName="title" placeholder="Vacances scolaire">
+            <!--span *ngIf="isFieldInvalid('familyName')" class="error-message-container">Le nom est requis</span-->
+        </div>
+    
+        <div class="form-group">
+            <label for="content">Contenu*</label>
+            <!--input id="content" type="text" formControlName="content" placeholder="Ecrivez votre contenu"-->
+            <textarea id="content" formControlName="content" placeholder="Ecrivez votre contenu" rows="5" cols="33">
+                
+            </textarea>
+            <!--span *ngIf="isFieldInvalid('firstName')" class="error-message-container">Le prénom est requis</span-->
+        </div>
+    </div>
+
+    <div class="submit-button-container">
+        <button class="submit-button" type="submit" (click)="onSubmitForm()">Modifier
+        </button>
+    </div>
+</form>

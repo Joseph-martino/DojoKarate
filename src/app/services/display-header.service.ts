@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HeaderInformations } from '../models/headerInformations';
+import { HeaderInformations } from '../models/HeaderInformations';
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +32,8 @@ export class DisplayHeaderService {
     {
       title: "Actualités",
       description: "Lorem ipsum dolor sit amet consectetur. Feugiat aenean vitae eleifend rhoncus viverra lobortis varius.",
-      banner: "assets/images/banners/news-banner.jpg",
-      path: "/actualités"
+      banner: "assets/images/banners/news-banner.png",
+      path: "/actualites"
     }, 
 
     {
@@ -43,4 +43,8 @@ export class DisplayHeaderService {
       path: "/contact"
     }
   ];
+
+  getHeaderInformationsByPath(path: string){
+    return this.headerInformations.find(header => header.path == path);
+  }
 }

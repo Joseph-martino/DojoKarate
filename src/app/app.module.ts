@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,11 @@ import { BoxingComponent } from './components/boxing/boxing.component';
 import { NewsComponent } from './components/news/news.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AddNewsComponent } from './components/add-news/add-news.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SingleNewsComponent } from './components/single-news/single-news.component';
+import { UpdateNewsComponent } from './components/update-news/update-news.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +26,17 @@ import { HeaderComponent } from './components/header/header.component';
     BoxingComponent,
     NewsComponent,
     ContactComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddNewsComponent,
+    SingleNewsComponent,
+    UpdateNewsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()

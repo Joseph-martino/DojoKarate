@@ -1,1 +1,10 @@
-<p>header works!</p>
+<div class="banner-container">
+    <img [src]="banner" alt="page banner">
+</div>
+
+<div class="banner-text-container">
+    <p>{{ title | uppercase }}</p>
+    <p>{{ description }}</p>
+</div>
+
+<app-nav-bar></app-nav-bar>
