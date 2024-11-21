@@ -19,6 +19,12 @@
             </textarea>
             <!--span *ngIf="isFieldInvalid('firstName')" class="error-message-container">Le prénom est requis</span-->
         </div>
+
+        <div class="form-group">
+            <label for="picture">Ajouter une image:</label>
+            <input type="file" id="picture" name="picture" accept="image/png, image/jpeg" (change)="onFileSelected($event)" />
+            <img *ngIf="previewUrl" [src]="previewUrl" alt="Image preview" style="max-width: 200px; margin-top: 10px;" />
+        </div>
     </div>
 
     <div class="submit-button-container">

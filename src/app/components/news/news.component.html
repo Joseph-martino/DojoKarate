@@ -5,6 +5,9 @@
         <a (click)="onGoToSingleNewsPage(news.newsId)">{{ news.title | uppercase}}</a>
         <h3>date: {{ news.createdDate }}</h3>
         <p>{{ news.content }}</p>
+        <!-- Affichage de l'image si elle existe -->
+          <img *ngIf="news.picturePath" [src]="'http://localhost:8080/DojoKarate/rest/uploads/' + news.picturePath"
+        alt="{{ news.title }}" style="max-width: 200px;" />
     </div>
 </div>
 

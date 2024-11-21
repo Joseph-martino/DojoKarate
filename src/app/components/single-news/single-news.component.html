@@ -1,6 +1,10 @@
 <p>single-news works!</p>
 
+
 <div *ngIf="news">
+            <!-- Affichage de l'image si elle existe -->
+            <img *ngIf="news.picturePath" [src]="'http://localhost:8080/DojoKarate/rest/uploads/' + news.picturePath"
+            alt="{{ news.title }}" style="max-width: 200px;" />
     <h2>{{ news.title | uppercase }}</h2>
     <p> {{ news.content }}</p>
 </div>

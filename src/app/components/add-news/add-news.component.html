@@ -9,10 +9,25 @@
             <!--span *ngIf="isFieldInvalid('familyName')" class="error-message-container">Le nom est requis</span-->
         </div>
     
-        <div class="form-group">
+        <!--div class="form-group">
             <label for="content">Contenu*</label>
             <input id="content" type="text" formControlName="content" placeholder="Ecrivez votre contenu">
+            <span *ngIf="isFieldInvalid('firstName')" class="error-message-container">Le prénom est requis</span>
+        </div-->
+
+        <div class="form-group">
+            <label for="content">Contenu*</label>
+            <!--input id="content" type="text" formControlName="content" placeholder="Ecrivez votre contenu"-->
+            <textarea id="content" formControlName="content" placeholder="Ecrivez votre contenu" rows="5" cols="33">
+                
+            </textarea>
             <!--span *ngIf="isFieldInvalid('firstName')" class="error-message-container">Le prénom est requis</span-->
+        </div>
+
+        <div class="form-group">
+            <label for="picture">Ajouter une image:</label>
+            <input type="file" id="picture" name="picture" accept="image/png, image/jpeg" (change)="onFileSelected($event)" />
+            <img *ngIf="previewUrl" [src]="previewUrl" alt="Image preview" style="max-width: 200px; margin-top: 10px;" />
         </div>
     </div>
 

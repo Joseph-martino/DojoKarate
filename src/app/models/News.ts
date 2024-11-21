@@ -4,4 +4,5 @@ export class News {
     title!: string;
     content!: string;
     createdDate!: Date;
+    picturePath!: String;
 }
