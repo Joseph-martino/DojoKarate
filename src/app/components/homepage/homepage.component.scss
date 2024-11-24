@@ -1,0 +1,71 @@
+button{
+    width: 43%;
+    background-color: #D63939;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    &:hover {
+        background-color: darken(#D63939, 10%);
+    }
+}
+
+.dojo-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.text-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+        width: 65%;
+    }
+}
+
+.picture-container {
+    width: 40%;
+    img {
+        width: 100%;
+    }
+}
+
+.karate-section {
+    display: flex;
+    justify-content: flex-start;
+    padding: 50px;
+    width: 80%;
+    height: 100%;
+
+    .picture-container {
+    margin-right: 40px;
+    margin-left: 40px;
+    display: flex;
+    width: 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .text-container {
+        margin-left: 130px;
+    }
+}
+
+.boxing-section {
+    display: flex;
+    justify-content: flex-end;
+    padding: 50px;
+
+    .picture-container {
+        margin-right: 130px;
+    }
+}

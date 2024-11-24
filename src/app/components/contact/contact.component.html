@@ -1,1 +1,47 @@
-<p>contact works!</p>
+<div class="contact-page-header">
+    <div>
+        <h2>BESOIN DE PLUS <span class="red-highlight">D’INFOS ?</span></h2>
+    </div>
+    <div class="header-title-second-row">
+        <h2><span class="red-highlight">ECRIVEZ</span> NOUS</h2>
+    </div>
+</div>
+
+<section class="contact-page-body">
+    <form class="contact-form-container" [formGroup]="contactForm">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="firstName">Prénom*</label>
+                <input class="field" id="firstName" type="text" formControlName="firstName" placeholder="Paul">
+                <!--span *ngIf="isFieldInvalid('firstName')" class="error-message-container">Le nom est requis</span-->
+            </div>
+    
+            <div class="form-group">
+                <label for="familyName">Nom de famille*</label>
+                <input class="field" id="familyName" type="text" formControlName="familyName" placeholder="Durant">
+                <!--span *ngIf="isFieldInvalid('familyName')" class="error-message-container">Le nom est requis</span-->
+            </div>
+    
+            <div class="form-group">
+                <label for="email">email*</label>
+                <input class="field" id="email" type="text" formControlName="email" placeholder="PaulDurant@gmail.com">
+                <!--span *ngIf="isFieldInvalid('email')" class="error-message-container">Le nom est requis</span-->
+            </div>
+    
+            <div class="form-group">
+                <label for="message">Message*</label>
+                <!--input id="content" type="text" formControlName="content" placeholder="Ecrivez votre contenu"-->
+                <textarea class="messageField" id="message" formControlName="message" placeholder="Ecrivez votre message" rows="8" cols="50"></textarea>
+                <!--span *ngIf="isFieldInvalid('firstName')" class="error-message-container">Le prénom est requis</span-->
+            </div>
+        </div>
+    
+        <div class="submit-button-container">
+            <button class="submit-button" type="submit" (click)="onSubmitForm()">Envoyer
+            </button>
+        </div>
+    </form>
+    
+    <img src="assets/images/pictures/karate-man-contact-page.png" alt="karate man">
+
+</section>

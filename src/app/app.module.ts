@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SingleNewsComponent } from './components/single-news/single-news.component';
 import { UpdateNewsComponent } from './components/update-news/update-news.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UpdateNewsComponent } from './components/update-news/update-news.compon
     HeaderComponent,
     AddNewsComponent,
     SingleNewsComponent,
-    UpdateNewsComponent
+    UpdateNewsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

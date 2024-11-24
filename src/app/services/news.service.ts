@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { News } from '../models/News';
 import { ActivatedRoute } from '@angular/router';
+import { Contact } from '../models/Contact';
 
 @Injectable({
   providedIn: 'root'
@@ -68,6 +69,20 @@ export class NewsService {
     console.log("service test suppression");
     return this.http.delete<News>(`http://localhost:8080/DojoKarate/rest/news/delete/${newsId}`).pipe(
       tap((news) => this.logInfo(news)),
+      catchError((error) => this.logError(error, undefined))
+    );
+  }
+
+  sendContactMessage(formValue: { firstName: string, familyName: string, email: string, message: string}){
+    const contact: Contact = new Contact();
+    contact.firstName = formValue.firstName;
+    contact.familyName = formValue.familyName;
+    contact.email = formValue.email;
+    contact.message = formValue.message;
+    console.log(contact);
+
+    return this.http.post<Contact>('http://localhost:8080/DojoKarate/rest/contact', contact).pipe(
+      tap((response) => this.logInfo(response)),
       catchError((error) => this.logError(error, undefined))
     );
   }

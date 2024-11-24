@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-homepage',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent {
+
+  constructor(private router: Router){
+
+  }
+
+  onGoToKaratePage(){
+    this.router.navigateByUrl("/karate");
+  }
+
+  onGoToBoxingPage(){
+    this.router.navigateByUrl("/boxe");
+  }
 
 }
