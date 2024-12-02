@@ -8,6 +8,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AddNewsComponent } from './components/add-news/add-news.component';
 import { SingleNewsComponent } from './components/single-news/single-news.component';
 import { UpdateNewsComponent } from './components/update-news/update-news.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path:"", component: HomepageComponent },
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent},
   { path: "creer", component: AddNewsComponent },
   { path: "update/:id", component: UpdateNewsComponent },
-  { path: "actualites/:id", component: SingleNewsComponent }
+  { path: "actualites/:id", component: SingleNewsComponent },
+  { path: "404-error", component: PageNotFoundComponent },
+  { path: "**", redirectTo: "/404-error"}
 ];
 
 @NgModule({

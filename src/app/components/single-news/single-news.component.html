@@ -1,14 +1,13 @@
-<p>single-news works!</p>
-
-
-<div *ngIf="news">
-            <!-- Affichage de l'image si elle existe -->
-            <img *ngIf="news.picturePath" [src]="'http://localhost:8080/DojoKarate/rest/uploads/' + news.picturePath"
-            alt="{{ news.title }}" style="max-width: 200px;" />
+<div  class="news-content" *ngIf="news">
+    <img *ngIf="news.picturePath" [src]="'http://localhost:8080/DojoKarate/rest/uploads/' + news.picturePath" alt="{{ news.title }}" style="max-width: 200px;" />
     <h2>{{ news.title | uppercase }}</h2>
     <p> {{ news.content }}</p>
+
+    <div class="buttons-container">
+        <button class="delete-button" (click)="onDeleteNews(news.newsId)">Supprimer</button>
+        <button class="update-button" (click)="onGotoUpdatePage()">Modifier</button>
+    </div>
 </div>
 
-<button (click)="onDeleteNews(news.newsId)">Supprimer</button>
-<button (click)="onGotoUpdatePage()">Modifier</button>
+
 

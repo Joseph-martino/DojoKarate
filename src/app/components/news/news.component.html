@@ -1,14 +1,16 @@
-<p>ACTUALITES</p>
-
-<div *ngIf="newsList">
-    <div *ngFor="let news of newsList">
-        <a (click)="onGoToSingleNewsPage(news.newsId)">{{ news.title | uppercase}}</a>
-        <h3>date: {{ news.createdDate }}</h3>
-        <p>{{ news.content }}</p>
-        <!-- Affichage de l'image si elle existe -->
-          <img *ngIf="news.picturePath" [src]="'http://localhost:8080/DojoKarate/rest/uploads/' + news.picturePath"
-        alt="{{ news.title }}" style="max-width: 200px;" />
+<button class="add-news-button" (click)="onGoToAddNewsPage()">Ajouter</button>
+<div class="news-container"*ngIf="newsList">
+    <div *ngFor="let news of newsList" class="news-card">
+        <a class="news-title">{{ news.title | uppercase}}</a>
+        <h3 class="news-date" >Ajouté le: {{ news.createdDate }}</h3>
+        <p class="news-content">{{ news.content }}</p>
+        <button class="news-more-info-button" (click)="onGoToSingleNewsPage(news.newsId)">En savoir plus</button>
     </div>
 </div>
 
-<button (click)="onGoToAddNewsPage()">Ajouter</button>
+<app-pagination
+[currentPageNumber]="currentPageNumber"
+[totalNumberOfPages]="totalNumberOfPages$ |async"
+(selectedPage)="onGetCurrentPageNews($event)"></app-pagination>
+
+

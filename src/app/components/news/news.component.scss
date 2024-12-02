@@ -1,0 +1,40 @@
+.news-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.news-card {
+    margin: 30px 0 30px 0;
+}
+
+.news-title {
+    font-size: 1.3rem;
+    &:hover {
+        font-weight: bold;
+    }
+}
+
+.news-date {
+    font-size: 0.9rem;
+
+}
+
+.add-news-button {
+    width: 7%;
+}
+
+button {
+    width: 11%;
+    background-color: #D63939;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    &:hover {
+        background-color: darken(#D63939, 10%);
+    }
+}

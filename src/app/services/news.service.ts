@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { News } from '../models/News';
@@ -23,24 +23,30 @@ export class NewsService {
   }
 
   getAllNews(): Observable<News[]> {
-    return this.http.get<News[]>('http://localhost:8080/DojoKarate/rest/news/test').pipe(
+    return this.http.get<News[]>('http://localhost:8080/DojoKarate/rest/news').pipe(
       tap((newsList) => this.logInfo(newsList)),
       catchError((error) => this.logError(error, []))
     );
   }
 
-  // addNews(formValue: { title: string, content: string}): Observable<News>{
-  //   this.news = new News();
-  //   this.news.title = formValue.title;
-  //   this.news.content = formValue.content;
-  //   const date: Date = new Date();
-  //   this.news.createdDate = date;
+  getNewsListForPage(pageNumber: number, pageSize: number): Observable<News[]>{
+    let params = new HttpParams();
+    params = params.set("pageNumber", pageNumber.toString());
+    params = params.set("pageSize", pageSize.toString());
 
-  //   return this.http.post<News>('http://localhost:8080/DojoKarate/rest/news/create', this.news).pipe(
-  //     tap((news) => this.logInfo(news)),
-  //     catchError((error) => this.logError(error, undefined))
-  //   );
-  // }
+    return this.http.get<News[]>('http://localhost:8080/DojoKarate/rest/news/test', { params: params }).pipe(
+      tap((menuList) => this.logInfo(menuList)),
+      catchError((error) =>  this.logError(error,[])
+      )
+    );
+  }
+
+  getNewsTotalNumber(): Observable<number>{
+    return this.http.get<number>('http://localhost:8080/DojoKarate/rest/news/total').pipe(
+      tap((totalNumber) => this.logInfo(totalNumber)),
+      catchError((error) => this.logError(error, undefined))
+    );
+  }
 
   addNews(formData: FormData): Observable<any> {
     return this.http.post('http://localhost:8080/DojoKarate/rest/news/create', formData).pipe(
@@ -48,15 +54,6 @@ export class NewsService {
       catchError((error) => this.logError(error, undefined))
     );
   }
-  
-
-  // updateNews(news: News): Observable<News>{
-
-  //   return this.http.put<News>(`http://localhost:8080/DojoKarate/rest/news/update/${news.newsId}`, news).pipe(
-  //     tap((news) => this.logInfo(news)),
-  //     catchError((error) => this.logError(error, undefined))
-  //   );
-  // }
 
   updateNews(newsId: number, formData: FormData): Observable<any> {
     return this.http.put<News>(`http://localhost:8080/DojoKarate/rest/news/update/${newsId}`, formData).pipe(

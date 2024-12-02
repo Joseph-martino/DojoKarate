@@ -1,0 +1,39 @@
+button {
+    width: 28%;
+    background-color: #D63939;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.news-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.delete-button {
+    background-color: #D63939;
+    &:hover {
+        background-color: darken(#D63939, 10%);
+    }
+}
+
+.update-button {
+    background-color: #1b842e;
+    &:hover {
+        background-color: darken(#1b842e, 10%);
+    }
+}

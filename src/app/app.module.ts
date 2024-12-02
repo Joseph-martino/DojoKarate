@@ -17,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SingleNewsComponent } from './components/single-news/single-news.component';
 import { UpdateNewsComponent } from './components/update-news/update-news.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FooterComponent } from './components/footer/footer.component';
     AddNewsComponent,
     SingleNewsComponent,
     UpdateNewsComponent,
-    FooterComponent
+    FooterComponent,
+    PaginationComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
